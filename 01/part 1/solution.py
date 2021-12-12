@@ -15,4 +15,4 @@ def find_num_greater_than_previous(file_input):
     return num_greater_than_previous
 
 
-print(find_num_greater_than_previous(fi.FileInput("input.txt")))
+print(find_num_greater_than_previous(fi.FileInput("../input.txt")))
