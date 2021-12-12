@@ -1,6 +1,6 @@
-import fileinput as fi
+from fileinput import FileInput
 
-def find_num_greater_than_previous(file_input):
+def find_num_greater_than_previous(file_input: FileInput):
     result = 0
 
     previous_window = [int(file_input.readline()), int(file_input.readline()), int(file_input.readline())]
@@ -20,4 +20,4 @@ def find_num_greater_than_previous(file_input):
     return result
 
 
-print(find_num_greater_than_previous(fi.FileInput("../input.txt")))
+print(find_num_greater_than_previous(FileInput('../input.txt')))

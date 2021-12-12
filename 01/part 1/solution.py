@@ -1,18 +1,20 @@
-import fileinput as fi
+from fileinput import FileInput
 
-def find_num_greater_than_previous(file_input):
+def find_num_greater_than_previous(file_input: FileInput):
     num_greater_than_previous = 0
 
-    previous_line = file_input.readline()
-    this_line = file_input.readline()
-
-    while this_line:
-        if int(this_line) > int(previous_line):
-            num_greater_than_previous += 1
+    this_line = None
+    while True:
         previous_line = this_line
         this_line = file_input.readline()
+        if not previous_line:
+            continue
+        if not this_line:
+            break
+        if int(this_line) > int(previous_line):
+            num_greater_than_previous += 1
 
     return num_greater_than_previous
 
 
-print(find_num_greater_than_previous(fi.FileInput("../input.txt")))
+print(find_num_greater_than_previous(FileInput('../input.txt')))
